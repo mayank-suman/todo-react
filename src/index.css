@@ -1,14 +1,72 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+    margin: 0;
+    padding: 20px 0;
+    font-family: sans-serif;
+  }
+  
+  form.TodoAddForm {
+    margin: 0 20px;
+  }
+  
+  form.TodoAddForm label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  form.TodoAddForm input {
+    width: 80%;
+    padding: 12px 10px;
+    float: left;
+    font-size: 1.2em;
+  }
+  
+  form.TodoAddForm button {
+    width: 15%;
+    padding: 14px 10px;
+    float: right;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: rgb(171, 171, 171);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  form.TodoAddForm button:hover {
+    background: rgba(171, 171, 171, 0.75);
+  }
+  
+  .TodoCount {
+    display: block;
+    clear: both;
+    margin: 0 20px;
+    padding: 20px 0 0;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: right;
+  }
+  
+  ul.TodoList {
+    clear: both;
+    list-style: none;
+    margin: 0 20px;
+    padding: 20px 0;
+  }
+  
+  ul.TodoList li {
+    margin: 10px 0;
+    padding: 12px 10px;
+    text-align: left;
+    font-size: 1.2em;
+    background: #a3c2fa;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  ul.TodoList li.complete {
+    background: #eee;
+    color: #ccc
+  }
