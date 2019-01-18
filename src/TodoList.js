@@ -7,42 +7,36 @@ import { sort } from './store';
 
 class TodoList extends React.Component {
   render() {
-    const items = sort(this.props.items)
-    let listItems = [];
+    const items = sort(this.props.items);
 
-    for (var index = 0; index < items.length; index += 1) {
-      let item = items[index]
-
-      listItems.push(
-        <li
-          key={index}
-          className={ (item.isComplete ? '' : 'in') + 'complete' }
-          onClick={ () => {
-            item.isComplete = item.isComplete ? false : true;
-
-            window.sessionStorage.setItem('todos', JSON.stringify(items));
-
-            if (typeof this.props.onChange === 'function') {
-              this.props.onChange();
-            }
-          } }
-        >
-          { item.isComplete ? <span>&#10003; <s>{ item.text }</s></span> : item.text }
-        </li>
-      );
-    }
-
-    // ADD LINE
+    // ADD THIS LINE
     //const totalComplete = items.filter(item => item.isComplete === true).length;
 
     return (
       <div>
         <TodoCount items={ items } />
         <ul className="TodoList">
-          { listItems }
+          {this.renderListItems() }
         </ul>
       </div>
     );
+  }
+
+    // ADD THIS LINE
+  renderListItems() {
+    let self = this;
+    const items = sort(this.props.items);
+    return items.map((item, itemIndx) => {
+      return (<li key={itemIndx} className={(item.isComplete ? '' : 'in') + 'complete'} onClick={() => {
+        item.isComplete = item.isComplete ? false : true;
+        window.sessionStorage.setItem('todos', JSON.stringify(items));
+        if (typeof self.props.onChange === 'function') {
+          self.props.onChange();
+        }
+      }}>
+        {item.isComplete ? <span>&#10003; <s>{item.text}</s></span> : item.text}
+      </li>);
+    });
   }
 }
 

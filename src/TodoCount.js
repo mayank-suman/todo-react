@@ -6,12 +6,13 @@ class TodoCount extends React.Component {
     super(props);
 
     this.state = {
-    // add line
+    // ADD THIS LINE
       totalComplete: props.items.filter(item => item.isComplete === true).length,
     };
   }
 
   render() {
+    // ADD THIS LINE
     if (this.props.items.length === 0) {
       return null;
     }

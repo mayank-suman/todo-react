@@ -18,7 +18,7 @@ class TodoAddForm extends React.Component {
     event.preventDefault();
     event.stopPropagation();
 
-    // ADD LINE
+    // ADD THIS LINE
     if(!this.state.todo) return;
     var t = getNewTodo(this.state.todo);
 
